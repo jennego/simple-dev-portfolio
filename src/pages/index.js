@@ -12,8 +12,9 @@ import grass from "../images/grass.png"
 const IndexPage = () => {
   const parallaxData = [
     {
-      start: 0,
-      end: 500,
+      start: ".frame",
+      duration: 150,
+
       properties: [
         {
           startValue: 1,
@@ -22,17 +23,17 @@ const IndexPage = () => {
         },
       ],
     },
-    {
-      start: 0,
-      end: 500,
-      properties: [
-        {
-          startValue: 0,
-          endValue: -50,
-          property: "translateY",
-        },
-      ],
-    },
+    // {
+    //   start: 0,
+    //   end: 500,
+    //   properties: [
+    //     {
+    //       startValue: 0,
+    //       endValue: -50,
+    //       property: "translateY",
+    //     },
+    //   ],
+    // },
   ]
 
   const parallaxDataHorse = [
@@ -41,7 +42,7 @@ const IndexPage = () => {
       end: 500,
       properties: [
         {
-          startValue: 1.06,
+          startValue: 1.02,
           endValue: 1,
           property: "scale",
         },
@@ -49,26 +50,35 @@ const IndexPage = () => {
     },
   ]
 
-  const parallaxDataGrass = [
+  const parallaxFrame = [
     {
-      start: 0,
-      end: 500,
+      start: "self",
+      duration: 500,
+      easing: [0.25, 0.1, 0.6, 1.5],
       properties: [
         {
           startValue: 1,
-          endValue: 1.5,
+          endValue: 1,
           property: "scale",
         },
       ],
     },
   ]
   return (
-    <Layout>
+    <div>
       <h1>Hello World</h1>
-      <div
+      <h2>
+        {" "}
+        Pick an aspect ratio!! Keep it at the same aspect ratio. Change px to
+        something responsive?
+      </h2>
+
+      <Plx
+        className="frame"
+        parallaxData={parallaxFrame}
         style={{
-          width: "1000px",
-          height: "500px",
+          width: "90vw",
+          height: "100vh",
           overflow: "hidden",
           border: "2px black solid",
         }}
@@ -78,18 +88,35 @@ const IndexPage = () => {
           style={{ position: "absolute" }}
           parallaxData={parallaxData}
         >
-          <img src={background} width="1000px" />
+          <img src={background} width="1500px" />
         </Plx>
 
-        <Plx style={{ position: "absolute" }} parallaxData={parallaxDataHorse}>
+        <Plx
+          style={{ position: "absolute", left: "-30px" }}
+          parallaxData={parallaxDataHorse}
+        >
           <img src={ray} width="1000px" />
         </Plx>
+      </Plx>
 
-        <Plx style={{ position: "absolute" }} parallaxData={parallaxDataGrass}>
-          <img src={grass} width="1000px" />
-        </Plx>
-      </div>
-    </Layout>
+      <p>Blah blah</p>
+      <p>Regular content here </p>
+      <p>
+        Cupcake ipsum dolor sit amet I love brownie halvah. Carrot cake bonbon
+        cotton candy candy canes apple pie. Candy canes biscuit apple pie danish
+        shortbread. Chupa chups tiramisu caramels wafer sugar plum. Shortbread
+        chocolate cake marshmallow danish gummi bears gummi bears. Topping jelly
+        I love gummies marshmallow sesame snaps wafer tootsie roll. Powder
+        carrot cake candy lollipop caramels fruitcake chocolate cake. Caramels
+        cotton candy tiramisu macaroon I love muffin cake sugar plum. Apple pie
+        gingerbread soufflé topping apple pie danish cupcake carrot cake. Cotton
+        candy chocolate bar cheesecake I love marshmallow topping. Dessert gummi
+        bears toffee jelly cake I love candy canes apple pie. Soufflé cake donut
+        icing jelly-o icing. Jujubes jelly beans ice cream chocolate cake
+        marshmallow cheesecake I love dragée. Chocolate cake toffee lollipop
+        powder sweet roll jelly topping pudding.
+      </p>
+    </div>
   )
 }
 
