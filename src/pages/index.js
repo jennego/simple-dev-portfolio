@@ -1,13 +1,6 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import Plx from "react-plx"
-import background from "../images/background.jpg"
-import ray from "../images/ray.png"
-import grass from "../images/grass.png"
+import ReactFullpage from "@fullpage/react-fullpage"
+import Portfolio from "../components/sections/portfolio"
 
 const IndexPage = () => {
   const parallaxData = [
@@ -66,56 +59,37 @@ const IndexPage = () => {
   ]
   return (
     <div>
-      <h1>Hello World</h1>
-      <h2>
-        {" "}
-        Pick an aspect ratio!! Keep it at the same aspect ratio. Change px to
-        something responsive?
-      </h2>
+      <ReactFullpage
+        //fullpage options
+        menu={"#menu"}
+        scrollingSpeed={1000}
+        navigation={true}
+        /* Options here */
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              <div
+                className="section"
+                style={{ background: "purple", textAlign: "center" }}
+              >
+                <h1>Jennifer Chow</h1>
+                <p>Section 1 (welcome to fullpage.js) </p>
+                <button onClick={() => fullpageApi.moveSectionDown()}>
+                  Click me to move down
+                </button>
+              </div>
 
-      <Plx
-        className="frame"
-        parallaxData={parallaxFrame}
-        style={{
-          width: "90vw",
-          height: "100vh",
-          overflow: "hidden",
-          border: "2px black solid",
+              <Portfolio />
+              <div
+                className="section"
+                style={{ background: "rebeccapurple", textAlign: "center" }}
+              >
+                Hi
+              </div>
+            </ReactFullpage.Wrapper>
+          )
         }}
-      >
-        <Plx
-          className="MyAwesomeParallax"
-          style={{ position: "absolute" }}
-          parallaxData={parallaxData}
-        >
-          <img src={background} width="1500px" />
-        </Plx>
-
-        <Plx
-          style={{ position: "absolute", left: "-30px" }}
-          parallaxData={parallaxDataHorse}
-        >
-          <img src={ray} width="1000px" />
-        </Plx>
-      </Plx>
-
-      <p>Blah blah</p>
-      <p>Regular content here </p>
-      <p>
-        Cupcake ipsum dolor sit amet I love brownie halvah. Carrot cake bonbon
-        cotton candy candy canes apple pie. Candy canes biscuit apple pie danish
-        shortbread. Chupa chups tiramisu caramels wafer sugar plum. Shortbread
-        chocolate cake marshmallow danish gummi bears gummi bears. Topping jelly
-        I love gummies marshmallow sesame snaps wafer tootsie roll. Powder
-        carrot cake candy lollipop caramels fruitcake chocolate cake. Caramels
-        cotton candy tiramisu macaroon I love muffin cake sugar plum. Apple pie
-        gingerbread soufflé topping apple pie danish cupcake carrot cake. Cotton
-        candy chocolate bar cheesecake I love marshmallow topping. Dessert gummi
-        bears toffee jelly cake I love candy canes apple pie. Soufflé cake donut
-        icing jelly-o icing. Jujubes jelly beans ice cream chocolate cake
-        marshmallow cheesecake I love dragée. Chocolate cake toffee lollipop
-        powder sweet roll jelly topping pudding.
-      </p>
+      />
     </div>
   )
 }
