@@ -64,19 +64,14 @@ const IndexPage = () => {
         menu={"#menu"}
         scrollingSpeed={1000}
         navigation={true}
+        verticalCentered={false}
         /* Options here */
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
-              <div
-                className="section"
-                style={{ background: "purple", textAlign: "center" }}
-              >
-                <h1>Jennifer Chow</h1>
-                <p>Section 1 (welcome to fullpage.js) </p>
-                <button onClick={() => fullpageApi.moveSectionDown()}>
-                  Click me to move down
-                </button>
+              <div className="section centered-section">
+                <h1 className="title animated-header">Jennifer Chow</h1>
+                <h2 className="subtitle">Web Developer</h2>
               </div>
 
               <Portfolio />
