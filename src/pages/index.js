@@ -1,6 +1,8 @@
 import * as React from "react"
 import ReactFullpage from "@fullpage/react-fullpage"
 import Portfolio from "../components/sections/portfolio"
+import About from "../components/sections/about"
+import Contact from "../components/sections/contact"
 
 const IndexPage = () => {
   const parallaxData = [
@@ -75,12 +77,6 @@ const IndexPage = () => {
               </div>
 
               <Portfolio />
-              <div
-                className="section"
-                style={{ background: "rebeccapurple", textAlign: "center" }}
-              >
-                Hi
-              </div>
             </ReactFullpage.Wrapper>
           )
         }}
