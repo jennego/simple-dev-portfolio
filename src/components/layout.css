@@ -100,10 +100,10 @@ p {
 .photo-box-caption {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 0.5rem;
   padding: 1em 0.5em;
   color: white;
-  width: 100%;
+  width: calc(100% - 1.9rem);
   text-align: center;
   background: -moz-linear-gradient(
     top,
@@ -140,22 +140,36 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00101b1e', endColorstr='#0c0202',GradientType=0 ); /* IE6-9 */
 }
 
-.text-box {
-  background: rgb(49, 49, 49); /* bluish grey */
-  color: rgb(255, 190, 94); /* steel blue */
+.photo-box {
+  position: relative;
 }
 
-.text-box-head {
-  color: #fff;
-  padding-bottom: 0.2em;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 24px;
+.photo-box .photo-box-caption .photo-box--gutter > div > * {
+  margin: 0 0.5rem;
 }
 
-.text-box-subhead {
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.photo-box:hover .photo-box-overlay {
+  opacity: 1;
+}
+.photo-box:hover .photo-box-caption {
+  display: none;
+}
+
+.photo-box-overlay {
+  position: absolute;
+  top: 0;
+  margin: 0.3rem;
+  background: rgba(109, 21, 163, 0.8);
+  height: 350px;
+  width: calc(100% - 0.5rem);
+  background-size: 0 100%;
+  opacity: 0;
+  transition: opacity 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-box-overlay-text {
+  color: white;
 }

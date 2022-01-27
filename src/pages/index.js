@@ -77,6 +77,7 @@ const IndexPage = () => {
               </div>
 
               <Portfolio />
+              <About />
             </ReactFullpage.Wrapper>
           )
         }}
