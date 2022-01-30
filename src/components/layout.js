@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "purecss/build/pure-min.css"
 import "./layout.css"
+import "flexboxgrid/dist/flexboxgrid.min.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

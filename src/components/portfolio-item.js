@@ -5,7 +5,7 @@ const PortfolioItem = props => {
   return (
     <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
       <a href="http://www.dillonmcintosh.tumblr.com/">
-        <StaticImage
+        <img
           src="https://24.media.tumblr.com/d6b9403c704c3e5aa1725c106e8a9430/tumblr_mvyxd9PUpZ1st5lhmo1_1280.jpg"
           alt="Beach"
           style={{ margin: "5px" }}
