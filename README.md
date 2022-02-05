@@ -1,5 +1,12 @@
 Another portfolio!!
 
+To do
+
+- create portfolio pages
+- add data source
+- hook up form
+- add arrows
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
